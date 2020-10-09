@@ -17,7 +17,7 @@ python app.py
 
 ## Create new directory 
 ```bash
-mkdir flaskapp-feedback
+mkdir Feedback_app
 ```
 
 ## Create python virtual environment
@@ -40,7 +40,7 @@ pipenv install gunicorn #http server needed to deploy to Heroku
 ```
 
 ## Install python in Visual Studio Code and select python interpreter
-python 3.8 flaskapp-feedback
+python 3.8 Feedback_app
 
 ## Create project folders and add files
 static (logo.png, css.style)
@@ -95,13 +95,13 @@ class Feedback(db.Model):
     __tablename__ = 'feedback'
     id = db.Column(db.Integer, primary_key=True)
     customer = db.Column(db.String(200), unique=True)
-    dealer = db.Column(db.String(200))
+    service = db.Column(db.String(200))
     rating = db.Column(db.Integer)
     comments = db.Column(db.Text())
 
-    def __init__(self, customer, dealer, rating, comments):
+    def __init__(self, customer, service, rating, comments):
         self.customer = customer
-        self.dealer = dealer
+        self.service = service
         self.rating = rating
         self.comments = comments
 ```
@@ -129,11 +129,11 @@ Create a new file .gitignore and initialize within the terminal a git repository
 
 # heroku login 
 
-# create heroku application -> heroku create flaskapp-feedback
+# create heroku application -> heroku create Feedback_app
 
-# create postgresql database on heroku -> heroku addons:create heroku-postgresql:hobby-dev --app flaskapp-feedback
+# create postgresql database on heroku -> heroku addons:create heroku-postgresql:hobby-dev --app Feedback_app
 
-# get heroku database url -> heroku config --app flaskapp-feedback
+# get heroku database url -> heroku config --app Feedback_app
 
 # paste the url inside app.py file in the app.config variable (production database)
 
@@ -149,7 +149,7 @@ Create a new file .gitignore and initialize within the terminal a git repository
     # git add .
     # git commit -m 'Initial deploy'
 
-# push local repo (git) into heroku -> heroku git:remote -a flaskapp-feedback
+# push local repo (git) into heroku -> heroku git:remote -a Feedback_app
 
 # push to heroku master branch -> git push heroku master
 
@@ -161,10 +161,10 @@ Create a new file .gitignore and initialize within the terminal a git repository
     # exit()
 
 # LAUNCHE THE WEB APP -> heroku open
-    # https://flaskapp-feedback.herokuapp.com/
+    # https://Feedback_app.herokuapp.com/
 
-# login into the remote database -> heroku pg:psql --app flaskapp-feedback
-    # select * from feedback;à
+# login into the remote database -> heroku pg:psql --app Feedback_app
+    # select * from feedback;
 
 # Check email from mailtrap.io
 ```
