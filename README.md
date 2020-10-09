@@ -17,7 +17,7 @@ python app.py
 
 ## Create new directory 
 ```bash
-mkdir Feedback_app
+mkdir feedback_app
 ```
 
 ## Create python virtual environment
@@ -40,7 +40,7 @@ pipenv install gunicorn #http server needed to deploy to Heroku
 ```
 
 ## Install python in Visual Studio Code and select python interpreter
-python 3.8 Feedback_app
+python 3.8 feedback_app
 
 ## Create project folders and add files
 static (logo.png, css.style)
@@ -129,11 +129,11 @@ Create a new file .gitignore and initialize within the terminal a git repository
 
 # heroku login 
 
-# create heroku application -> heroku create Feedback_app
+# create heroku application -> heroku create feedback_app
 
-# create postgresql database on heroku -> heroku addons:create heroku-postgresql:hobby-dev --app Feedback_app
+# create postgresql database on heroku -> heroku addons:create heroku-postgresql:hobby-dev --app feedback_app
 
-# get heroku database url -> heroku config --app Feedback_app
+# get heroku database url -> heroku config --app feedback_app
 
 # paste the url inside app.py file in the app.config variable (production database)
 
@@ -149,7 +149,7 @@ Create a new file .gitignore and initialize within the terminal a git repository
     # git add .
     # git commit -m 'Initial deploy'
 
-# push local repo (git) into heroku -> heroku git:remote -a Feedback_app
+# push local repo (git) into heroku -> heroku git:remote -a feedback_app
 
 # push to heroku master branch -> git push heroku master
 
@@ -161,9 +161,9 @@ Create a new file .gitignore and initialize within the terminal a git repository
     # exit()
 
 # LAUNCHE THE WEB APP -> heroku open
-    # https://Feedback_app.herokuapp.com/
+    # https://feedback_app.herokuapp.com/
 
-# login into the remote database -> heroku pg:psql --app Feedback_app
+# login into the remote database -> heroku pg:psql --app feedback_app
     # select * from feedback;
 
 # Check email from mailtrap.io
